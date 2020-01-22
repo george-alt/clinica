@@ -1,0 +1,27 @@
+<?php
+    
+    /*
+     *classe TLogger
+     *Esta classe prove uma interface abstrata para definicao de algoritmos de log
+    */
+    abstract class TLogger
+    {
+        protected $filename;
+        
+        /*
+         *metodo __construct()
+         *instancia um logger
+         *@param $filename = local do arquivo de log
+        */
+        
+        public function __construct($filename)
+        {
+            $this->filename = $filename;
+            //reseta o conteudo do arquivo
+            //file_put_contents($filename, '');
+        }
+        
+        //define o metodo write como obrigatorio
+        abstract function write($message);
+    }
+?>
